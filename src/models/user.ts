@@ -1,10 +1,12 @@
 import {model,Model,Document,Schema} from 'mongoose';
-import { Password } from '../service/password';
+
 
 
 interface UserAttrs {
     email:string,
-    password:string,
+    googleId:string,
+    name:string,
+    picture:string
 }
 
 interface UserModel extends Model<UserDoc>{
@@ -13,37 +15,39 @@ interface UserModel extends Model<UserDoc>{
 
 interface UserDoc extends Document{
     email:string,
-    password:string,
+    googleId:string,
+    name:string,
+    picture:string,
 }
 
 const userSchema = new Schema({
-  
+    googleId:{type:String,
+        required:true},
     email:{
         type:String,
         required:true,
         unique:true
     },
-    password:{
+    name:{
+        type:String,
+        required:true
+    },
+    picture:{
         type:String,
         required:true
     }
+   
 },{toJSON:{
     transform(doc,ret){
         ret.id=ret._id;
         delete ret._id;
-        delete ret.password;
+        
         delete ret.__v
     }
 }});
-userSchema.index({ email: 1 }, { unique: true });
 
-userSchema.pre('save',async function (done){
-    if(this.isModified('password')){
-        const hashed = await Password.toHash(this.get('password'));
-        this.set('password',hashed);
-    }
-    done()
-})
+
+
 
 userSchema.statics.build = (attrs:UserAttrs)=>{
     return new User(attrs)
