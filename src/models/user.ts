@@ -1,24 +1,8 @@
 import {model,Model,Document,Schema} from 'mongoose';
+import { UserAttrs, UserDoc, UserModel } from '../@types/UserAttras';
 
 
 
-interface UserAttrs {
-    email:string,
-    googleId:string,
-    name:string,
-    picture:string
-}
-
-interface UserModel extends Model<UserDoc>{
-    build(attrs:UserAttrs):UserDoc;
-}
-
-interface UserDoc extends Document{
-    email:string,
-    googleId:string,
-    name:string,
-    picture:string,
-}
 
 const userSchema = new Schema({
     googleId:{type:String,

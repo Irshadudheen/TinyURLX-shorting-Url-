@@ -1,7 +1,7 @@
 import express,{json} from 'express'
 import 'express-async-errors'
 
-import { currentUserRouter,singoutRouter ,googleAuthRouter} from './routes/index'
+import { currentUserRouter,singoutRouter ,googleAuthRouter,createUrlRouter} from './routes/index'
 import { errorhandler } from './middlewares/error-handler'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
@@ -16,6 +16,7 @@ app.use(cors())
 app.use(googleAuthRouter)
 app.use(currentUserRouter)
 app.use(singoutRouter)
+app.use(createUrlRouter)
 app.all('*',async()=>{
     throw new NotFoundError();
 })
