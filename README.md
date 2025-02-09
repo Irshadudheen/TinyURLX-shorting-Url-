@@ -75,8 +75,8 @@ BASE_URL=http://localhost:5000
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/mhdshuhaib001/Shortly.git
-cd Server
+git clone https://github.com/Irshadudheen/TinyURLX-shorting-Url-.git
+
 ```
 
 2. Install dependencies:
