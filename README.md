@@ -1,6 +1,6 @@
 # 🔗 Advanced URL Shortener
 
-A professional URL shortening service built with Node.js, Express, MongoDB, and Redis. This project features robust URL analytics, user authentication, and rate limiting to deliver a secure and scalable solution.
+A professional URL shortening service built with Node.js, Express, MongoDB, Typescript, and Redis. This project features robust URL analytics, user authentication, and rate limiting to deliver a secure and scalable solution.
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
 
@@ -45,7 +45,7 @@ A professional URL shortening service built with Node.js, Express, MongoDB, and 
   - Input validation
 
 ## 🔧 Tech Stack
-- **Backend:** Node.js, Express.js
+- **Backend:** Node.js, Express.js, Typescript
 - **Database:** MongoDB with Mongoose
 - **Caching:** Redis
 - **Authentication:** JWT, Google OAuth
@@ -63,12 +63,12 @@ A professional URL shortening service built with Node.js, Express, MongoDB, and 
 ### Environment Variables
 Create a `.env` file:
 ```env
-PORT=5000
-MONGODB_URI=your_mongodb_uri
-REDIS_URL=redis://redis:6379
-JWT_SECRET=your_jwt_secret
-FRONTEND_URL=http://localhost:3000
-BASE_URL=http://localhost:5000
+PORT=3000
+MONGODB_URL=your_mongodb_uri
+REDISPORT=redis://redis:6379
+JWT_KEY=your_jwt_secret
+FRONTEND_URL=http://localhost:5000
+BASE_URL=http://localhost:3000
 ```
 
 ### Installation
@@ -109,7 +109,7 @@ src/
 |   |── Customerror.ts
 |   └── Badrequesterror.ts 
 ├── config/
-│   ├── database.ts     # MongoDB configuration
+│   │   
 │   └── redis.ts        # Redis configuration
 ├── middleware/
 │   ├── auth.js
@@ -123,6 +123,9 @@ src/
 │   ├── urlRoute
 │   ├── auth
 │   └── analytics
+│ 
+├── service/
+│    └── redisService.ts
 |── app.ts
 └── index.ts
 

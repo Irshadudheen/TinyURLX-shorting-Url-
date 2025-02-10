@@ -6,8 +6,6 @@ import { body } from "express-validator";
 import { Url } from "../../models/url";
 import { BadRequestError } from "../../errors/bad-request-error";
 import nanoi from "nanoid";
-import {trackAnalytics} from "../../middlewares/analytics";
-import { v6 } from "uuid";
 import { setValue } from "../../service/redisService";
 import { createURLLimiter } from "../../middlewares/rateLimiter";
 
@@ -28,11 +26,15 @@ router.post('/api/url',
     async (req:Request,res:Response)=>{
         try {
             const {longUrl,topic} = req.body;
+            let {shortUrl} = req.body;
             const checkUrl = await Url.findOne({userId:req.currentUser!.id,longUrl})
+            if(!shortUrl){
+                shortUrl = nanoi.nanoid(6)
+            }
             if(checkUrl){
                 throw new BadRequestError('the Url already created')
             }
-            const shortUrl = v6().slice(-6) ;
+            // const shortUrl = v6().slice(-6) ;
 
             console.log(shortUrl)
             console.log(req.currentUser)
