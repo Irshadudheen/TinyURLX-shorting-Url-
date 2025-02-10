@@ -8,6 +8,7 @@ import { BadRequestError } from "../../errors/bad-request-error";
 import nanoi from "nanoid";
 import { setValue } from "../../service/redisService";
 import { createURLLimiter } from "../../middlewares/rateLimiter";
+import { v6 } from "uuid";
 
 const router = Router();
 router.post('/api/url',
@@ -29,12 +30,12 @@ router.post('/api/url',
             let {shortUrl} = req.body;
             const checkUrl = await Url.findOne({userId:req.currentUser!.id,longUrl})
             if(!shortUrl){
-                shortUrl = nanoi.nanoid(6)
+                shortUrl =  v6().slice(-6) ;
             }
             if(checkUrl){
                 throw new BadRequestError('the Url already created')
             }
-            // const shortUrl = v6().slice(-6) ;
+           
 
             console.log(shortUrl)
             console.log(req.currentUser)

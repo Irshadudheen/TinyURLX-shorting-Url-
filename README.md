@@ -4,8 +4,8 @@ A professional URL shortening service built with Node.js, Express, MongoDB, Type
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
 
-**Live Demo**: [https://shortly-6g7j.onrender.com](https://shortly-6g7j.onrender.com)  
-**API Documentation**: [Swagger Documentation](https://app.swaggerhub.com/apis/shortly/UrlShortner/1.0.0)
+**Live Demo**: [https://tinyurlx-shorting-url.onrender.com](https://tinyurlx-shorting-url.onrender.com)  
+**API Documentation**: [Postman Documentation](https://documenter.getpostman.com/view/36370628/2sAYX9n1Cj)
 
 ## 🗋 Table of Contents
 - [Features](#features)
@@ -135,12 +135,12 @@ src/
 
 The complete API documentation is available on SwaggerHub. The documentation includes detailed information about all endpoints, request/response formats, authentication requirements, and example usage.
 
-**View API Documentation**: [https://app.swaggerhub.com/apis/shortly/UrlShortner/1.0.0](https://app.swaggerhub.com/apis/shortly/UrlShortner/1.0.0)
+**View API Documentation**: [https://documenter.getpostman.com/view/36370628/2sAYX9n1Cj](https://documenter.getpostman.com/view/36370628/2sAYX9n1Cj)
 
-**Base URL**: `https://shortly-6g7j.onrender.com/api`
+**Base URL**: `https://tinyurlx-shorting-url.onrender.com`
 
 ## 🌐 Deployment
-This project is deployed on Render.com. [Live Demo](https://shortly-6g7j.onrender.com)
+This project is deployed on Render.com. [Live Demo](https://tinyurlx-shorting-url.onrender.com)
 
 ### Deployment Steps:
 1. Fork this repository
