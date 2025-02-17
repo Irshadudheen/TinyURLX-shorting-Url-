@@ -1,0 +1,42 @@
+{
+  "name": "tinyurlx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node-dev src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "express-useragent": "^1.0.15",
+    "express-validator": "^7.2.1",
+    "geoip-lite": "^1.4.10",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
+    "mongoose": "^8.9.6",
+    "nanoid": "^5.0.9",
+    "rate-limiter-flexible": "^5.0.5",
+    "redis": "^4.7.0",
+    "ts-node-dev": "^2.0.0",
+    "uuid": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/express-useragent": "^1.0.5",
+    "@types/geoip-lite": "^1.4.4",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/node": "^22.13.0",
+    "typescript": "^5.7.3"
+  }
+}
